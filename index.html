@@ -27,7 +27,7 @@
     -webkit-font-smoothing:antialiased}
   .wrap{max-width:1320px;margin:0 auto;padding:48px 24px 72px}
 
-  header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:40px}
+  header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:18px}
   .logo{width:96px;height:96px;border-radius:24px;background:#fff;color:#14171a;display:grid;place-items:center;
     border:1px solid rgba(20,23,26,.06);cursor:default;
     box-shadow:
@@ -73,10 +73,14 @@
     .logo{transition:none}
     .logo:hover{transform:none}
   }
-  h1{font-size:32px;line-height:1.15;margin:18px 0 0;letter-spacing:-.03em}
+  h1{font-size:32px;line-height:1.15;margin:0;letter-spacing:-.03em;position:relative;z-index:0}
+  .title{position:relative;display:inline-block;margin:18px 0 0}
   .sub{color:var(--muted);font-size:15px;margin-top:6px}
-  .ver{color:var(--muted);font-size:14px;margin-top:10px}
-  .ver b{color:var(--ink);font-weight:600}
+  .ver{position:absolute;top:-3px;left:calc(100% - 6px);z-index:2;
+    font-size:11px;font-weight:700;line-height:1.2;letter-spacing:.02em;
+    padding:3px 7px;border-radius:6px;font-variant-numeric:tabular-nums;
+    background:var(--accent);color:var(--accent-ink);white-space:nowrap}
+  .ver:empty{display:none}
 
   .hero{margin:0 0 28px;text-align:center}
   .hero .note{margin-top:40px}
@@ -155,9 +159,11 @@
         <path d="M19 16l-2 3h4l-2 3"/>
       </svg>
     </div>
-    <h1>Quick Map</h1>
+    <div class="title">
+      <h1>Quick Map</h1>
+      <span class="ver" id="ver"></span>
+    </div>
     <div class="sub">Розбір, візуалізація та конвертація координат та геофайлів</div>
-    <div class="ver" id="ver"><span class="skel" style="width:110px;display:inline-block;height:13px">&nbsp;</span></div>
   </header>
 
   <div id="hero" class="hero">
@@ -368,7 +374,7 @@ function renderAll(groups){
   const os = detectOS();
   const arch = os === 'mac' ? await detectArch() : null;
 
-  document.getElementById('ver').innerHTML = version ? `Версія <b>${version}</b>` : '';
+  document.getElementById('ver').textContent = version || '';
   renderHero(groups, os, arch);
   renderAll(groups);
   enhanceCodeBlocks();
