@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick Map — завантажити</title>
+<meta name="description" content="Завантажити Quick Map для macOS, Windows та Linux. Застосунок для роботи з координатами.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2314171a'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' transform='translate(2.4 2.4) scale(0.8)'%3E%3Cpath d='M13 19l-4 -2l-6 3v-13l6 -3l6 3l6 -3v8.5'/%3E%3Cpath d='M9 4v13'/%3E%3Cpath d='M15 7v7.5'/%3E%3Cpath d='M19 16l-2 3h4l-2 3'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  @font-face{font-family:'Road UI';src:url('fonts/RoadUI-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:'Road UI';src:url('fonts/RoadUI-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+  @font-face{font-family:'Road UI';src:url('fonts/RoadUI-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+  @font-face{font-family:'Road UI';src:url('fonts/RoadUI-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+  :root{
+    --font-sans:'Road UI',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    --bg:#f6f7f9; --panel:#fff; --ink:#14171a; --muted:#6b7480; --line:#e3e6ea;
+    --accent:#e63946; --accent-ink:#fff; --ok:#3d8b40; --shadow:0 1px 2px rgba(20,23,26,.06),0 8px 24px rgba(20,23,26,.06);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#101317; --panel:#171b21; --ink:#e8eaed; --muted:#98a1ad; --line:#252b33;
+           --accent:#ff5a67; --accent-ink:#1a0d0f; --ok:#6fcf74; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.35); }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:400 16px/1.55 var(--font-sans);
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1320px;margin:0 auto;padding:48px 24px 72px}
+
+  header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:40px}
+  .logo{width:96px;height:96px;border-radius:24px;background:#fff;color:#14171a;display:grid;place-items:center;
+    border:1px solid rgba(20,23,26,.06);cursor:default;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.9) inset,
+      0 -1px 1px rgba(20,23,26,.04) inset,
+      0 1px 1px rgba(20,23,26,.04),
+      0 2px 3px rgba(20,23,26,.05),
+      0 6px 10px rgba(20,23,26,.06),
+      0 14px 28px rgba(20,23,26,.08),
+      0 28px 48px -8px rgba(20,23,26,.12);
+    transition:transform .32s cubic-bezier(.22,1,.36,1), box-shadow .32s cubic-bezier(.22,1,.36,1)}
+  .logo svg{width:62px;height:62px}
+  .logo:hover{
+    transform:translateY(-6px) scale(1.07);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.95) inset,
+      0 -1px 1px rgba(20,23,26,.03) inset,
+      0 2px 3px rgba(20,23,26,.05),
+      0 8px 12px rgba(20,23,26,.07),
+      0 18px 28px rgba(20,23,26,.10),
+      0 36px 56px rgba(20,23,26,.14),
+      0 52px 80px -10px rgba(20,23,26,.18)}
+  @media (prefers-color-scheme:dark){
+    .logo{
+      border-color:rgba(255,255,255,.12);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.18) inset,
+        0 -1px 1px rgba(0,0,0,.25) inset,
+        0 1px 1px rgba(0,0,0,.2),
+        0 4px 8px rgba(0,0,0,.28),
+        0 12px 24px rgba(0,0,0,.32),
+        0 28px 48px -8px rgba(0,0,0,.45)}
+    .logo:hover{
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.22) inset,
+        0 -1px 1px rgba(0,0,0,.2) inset,
+        0 4px 8px rgba(0,0,0,.3),
+        0 14px 24px rgba(0,0,0,.38),
+        0 32px 56px rgba(0,0,0,.48),
+        0 52px 80px -10px rgba(0,0,0,.55)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .logo{transition:none}
+    .logo:hover{transform:none}
+  }
+  h1{font-size:32px;line-height:1.15;margin:18px 0 0;letter-spacing:-.03em}
+  .sub{color:var(--muted);font-size:15px;margin-top:6px}
+  .ver{color:var(--muted);font-size:14px;margin-top:10px}
+  .ver b{color:var(--ink);font-weight:600}
+
+  .hero{margin:0 0 28px;text-align:center}
+  .hero .note{margin-top:40px}
+  .dls{display:flex;flex-direction:column;align-items:center;gap:20px}
+  .dl{display:flex;flex-direction:column;align-items:center}
+  .hero-meta{margin-top:10px;color:var(--muted);font-size:14px;display:inline-flex;align-items:center;gap:7px}
+  .hero-meta svg{width:15px;height:15px;flex:0 0 auto;opacity:.75}
+
+  .btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:10px;
+    background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:16px;
+    border:1px solid transparent;transition:transform .06s ease,filter .15s ease}
+  .btn:hover{filter:brightness(1.07)} .btn:active{transform:translateY(1px)}
+  .btn--ghost{background:transparent;color:var(--ink);border-color:var(--line);font-weight:500}
+  .btn--ghost:hover{border-color:var(--muted);filter:none}
+  .btn svg{width:18px;height:18px;flex:0 0 auto}
+
+  .note{margin-top:20px;padding:13px 15px;border-radius:9px;background:rgba(230,57,70,.07);
+    border:1px solid rgba(230,57,70,.2);font-size:13.5px;color:var(--ink);text-align:left}
+  @media (prefers-color-scheme:dark){ .note{background:rgba(255,90,103,.09);border-color:rgba(255,90,103,.25)} }
+  .note b{font-weight:700}
+  .note code{font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(127,127,127,.16);
+    padding:7px 8px 7px 10px;border-radius:7px;display:flex;align-items:center;gap:8px;margin-top:8px;
+    cursor:pointer;user-select:none}
+  .note code .cmd{flex:1;min-width:0;overflow-wrap:anywhere;text-align:left}
+  .note .copy{flex:0 0 auto;width:28px;height:28px;padding:0;border:0;border-radius:6px;
+    background:transparent;color:inherit;opacity:.5;cursor:pointer;display:grid;place-items:center}
+  .note .copy:hover,.note code:hover .copy{opacity:.9;background:rgba(127,127,127,.16)}
+  .note .copy svg{width:15px;height:15px}
+  .note code.copied .copy{opacity:1;color:var(--ok)}
+  .note summary{cursor:pointer;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:8px;
+    list-style:none}
+  .note summary::-webkit-details-marker{display:none}
+  .note summary::after{content:'';width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+    transform:rotate(45deg);opacity:.45;flex:0 0 auto;transition:transform .15s ease;margin-top:-3px}
+  .note[open] summary{margin-bottom:8px}
+  .note[open] summary::after{transform:rotate(-135deg);margin-top:3px}
+
+  h2{font-size:14px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+     font-weight:700;margin:34px 0 12px}
+
+  .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:start}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;box-shadow:var(--shadow);min-width:0}
+  .card h3{margin:0 0 4px;font-size:15.5px;font-weight:700;display:flex;align-items:center;gap:8px}
+  .card h3 svg{width:17px;height:17px;opacity:.75}
+  .card .hint{color:var(--muted);font-size:12.5px;margin-bottom:12px}
+  .card .note{margin-top:12px;padding:11px 12px;font-size:12.5px;line-height:1.45}
+  @media (max-width:1100px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  @media (max-width:640px){ .grid{grid-template-columns:1fr} .wrap{padding:32px 16px 56px} .logo{width:80px;height:80px;border-radius:20px} .logo svg{width:50px;height:50px} }
+  .files{list-style:none;margin:0;padding:0}
+  .files li{border-top:1px solid var(--line)}
+  .files li:first-child{border-top:0}
+  .files a{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:9px 0;text-decoration:none;color:var(--ink);font-size:14px}
+  .files a:hover .fname{color:var(--accent);text-decoration:underline}
+  .fname{font-weight:500}
+  .fname em{font-style:normal;color:var(--muted);font-weight:400}
+  .fsize{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+  a{color:var(--accent)}
+  .state{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px;text-align:center;color:var(--muted)}
+  .skel{height:13px;border-radius:6px;background:linear-gradient(90deg,var(--line),rgba(127,127,127,.08),var(--line));
+    background-size:200% 100%;animation:sh 1.2s linear infinite}
+  @keyframes sh{to{background-position:-200% 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M13 19l-4 -2l-6 3v-13l6 -3l6 3l6 -3v8.5"/>
+        <path d="M9 4v13"/>
+        <path d="M15 7v7.5"/>
+        <path d="M19 16l-2 3h4l-2 3"/>
+      </svg>
+    </div>
+    <h1>Quick Map</h1>
+    <div class="sub">Розбір, візуалізація та конвертація координат та геофайлів</div>
+    <div class="ver" id="ver"><span class="skel" style="width:110px;display:inline-block;height:13px">&nbsp;</span></div>
+  </header>
+
+  <div id="hero" class="hero">
+    <div class="skel" style="width:200px;height:48px;border-radius:10px;margin:0 auto"></div>
+  </div>
+
+  <div id="all"></div>
+
+</div>
+
+<script>
+const REPO = '3R-Tools/quick-map-releases';
+const DL = n => `https://github.com/${REPO}/releases/latest/download/${encodeURIComponent(n)}`;
+
+const ICONS = {
+  mac: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.9c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.3 1.1 0 1.6-.7 2.9-.7s1.7.7 2.9.7 2-1.1 2.7-2.2c.9-1.2 1.2-2.5 1.2-2.5s-2.3-.9-2.3-3.6zM14.3 5.3c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.2z"/></svg>',
+  win: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.6l7.2-1v6.9H3V5.6zm0 12.8l7.2 1v-6.8H3v5.8zM11.1 19.6L21 21v-8.3h-9.9v6.9zM11.1 4.4v7.1H21V3l-9.9 1.4z"/></svg>',
+  linux: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2 0-3.2 1.6-3.2 3.6 0 1.3.2 2 .2 2.8 0 .9-1 2-1.7 3.4-.7 1.4-1.5 2.7-1.5 4 0 .5.1.9.3 1.2-.5.4-.8.9-.8 1.4 0 1.3 1.6 2 3.4 2.2 1.3.1 2.5.5 3.3.5s2-.4 3.3-.5c1.8-.2 3.4-.9 3.4-2.2 0-.5-.3-1-.8-1.4.2-.3.3-.7.3-1.2 0-1.3-.8-2.6-1.5-4-.7-1.4-1.7-2.5-1.7-3.4 0-.8.2-1.5.2-2.8C15.2 3.6 14 2 12 2zm-1.3 3.2c.4 0 .7.4.7.9s-.3.9-.7.9-.7-.4-.7-.9.3-.9.7-.9zm2.6 0c.4 0 .7.4.7.9s-.3.9-.7.9-.7-.4-.7-.9.3-.9.7-.9zM12 8.3c.9 0 1.9.5 1.9.9 0 .3-.9.9-1.9.9s-1.9-.6-1.9-.9c0-.4 1-.9 1.9-.9z"/></svg>',
+  web: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>'
+};
+const DLICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"/><path d="M6 12l6 6 6-6"/><path d="M4 20h16"/></svg>';
+const COPYICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+const CHECKICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+
+const mb = b => b >= 1048576 ? (b/1048576).toFixed(0) + ' МБ' : Math.max(1,Math.round(b/1024)) + ' КБ';
+
+/* Only user-facing artifacts. The mac .zip, .blockmap and latest*.yml exist
+   for electron-updater and would only confuse a human. */
+function classify(name){
+  if (/\.(blockmap|yml)$/i.test(name)) return null;
+  if (/-mac-.*\.zip$/i.test(name))     return null;
+  if (/-mac-arm64\.dmg$/i.test(name))  return {os:'mac',   label:'Apple Silicon', hint:'M1 – M6', rank:0};
+  if (/-mac-x64\.dmg$/i.test(name))    return {os:'mac',   label:'Intel',         hint:'2020 і раніше', rank:1};
+  if (/-win-x64\.exe$/i.test(name))    return {os:'win',   label:'64-bit',        hint:'звичайний ПК', rank:0};
+  if (/-win-arm64\.exe$/i.test(name))  return {os:'win',   label:'ARM',           hint:'', rank:2};
+  if (/-win\.exe$/i.test(name))        return {os:'win',   label:'універсальний', hint:'x64 + ARM', rank:1};
+  if (/-linux-(x86_64|amd64)\.AppImage$/i.test(name)) return {os:'linux', label:'AppImage 64-bit', hint:'', rank:0};
+  if (/-linux-arm64\.AppImage$/i.test(name))          return {os:'linux', label:'AppImage ARM',    hint:'', rank:1};
+  if (/-linux-(amd64|x86_64)\.deb$/i.test(name))      return {os:'linux', label:'deb 64-bit',      hint:'', rank:2};
+  if (/-linux-arm64\.deb$/i.test(name))               return {os:'linux', label:'deb ARM',         hint:'', rank:3};
+  if (/^quick-map-offline-.*\.zip$/i.test(name))      return {os:'web',   label:'Офлайн веб-версія', hint:'', rank:0};
+  return null;
+}
+
+const OS_TITLE = {mac:'macOS', win:'Windows', linux:'Linux', web:'Браузер'};
+const OS_HINT = {
+  mac:'Відкрийте .dmg і перетягніть застосунок у Програми',
+  win:'Запустіть інсталятор і слідуйте підказкам',
+  linux:'AppImage — зробіть файл виконуваним і запустіть',
+  web:'Розпакуйте архів і відкрийте index.html у браузері'
+};
+const OS_NOTE = {
+  mac:`<b>Перший запуск.</b> Застосунок ще не має підпису Apple, тому система заблокує відкриття.
+       Спробуйте відкрити його, натисніть «Готово», далі Системні параметри → Приватність і безпека → «Відкрити все одно».
+       Якщо кнопки немає, зніміть карантин у Терміналі:
+       <code>/usr/bin/xattr -cr /Applications/QuickMap.app</code>`,
+  win:`<b>Перший запуск.</b> Застосунок ще не має підпису Microsoft, тому SmartScreen може показати «Windows захистив комп’ютер».
+       Натисніть «Докладніше», потім «Все одно виконати».`,
+  linux:`<b>Перший запуск.</b> AppImage треба зробити виконуваним, інакше система не запустить файл:
+        <code>chmod +x QuickMap-*.AppImage</code>
+        Якщо файловий менеджер попереджає про ненадійне джерело — підтвердіть запуск.`,
+  web:''
+};
+
+function detectOS(){
+  const ua = navigator.userAgent;
+  if (/Windows|Win64|WOW64/i.test(ua)) return 'win';
+  if (/Android/i.test(ua)) return null;
+  if (/Macintosh|Mac OS X/i.test(ua)) return 'mac';
+  if (/Linux|X11/i.test(ua)) return 'linux';
+  return null;
+}
+
+async function detectArch(){
+  try{
+    const d = navigator.userAgentData;
+    if (d && d.getHighEntropyValues){
+      const v = await d.getHighEntropyValues(['architecture']);
+      if (v && v.architecture) return /arm/i.test(v.architecture) ? 'arm' : 'x86';
+    }
+  }catch(e){}
+  return null;
+}
+
+function enhanceCodeBlocks(){
+  document.querySelectorAll('.note code').forEach(el => {
+    if (el.dataset.copyReady) return;
+    el.dataset.copyReady = '1';
+    const text = el.textContent.trim();
+    const cmd = document.createElement('span');
+    cmd.className = 'cmd';
+    cmd.textContent = text;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy';
+    btn.setAttribute('aria-label', 'Копіювати');
+    btn.innerHTML = COPYICON;
+    el.replaceChildren(cmd, btn);
+
+    el.addEventListener('click', async () => {
+      try{ await navigator.clipboard.writeText(text); }
+      catch{
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      el.classList.add('copied');
+      btn.innerHTML = CHECKICON;
+      btn.setAttribute('aria-label', 'Скопійовано');
+      clearTimeout(el._copyTimer);
+      el._copyTimer = setTimeout(() => {
+        el.classList.remove('copied');
+        btn.innerHTML = COPYICON;
+        btn.setAttribute('aria-label', 'Копіювати');
+      }, 1400);
+    });
+  });
+}
+
+function noteHtml(html, spoiler){
+  if (!html) return '';
+  if (!spoiler) return `<div class="note">${html}</div>`;
+  const body = html.replace(/^\s*<b>Перший запуск\.<\/b>\s*/, '');
+  return `<details class="note"><summary>Перший запуск</summary>${body}</details>`;
+}
+
+function fileRow(a){
+  return `<li><a href="${DL(a.name)}" download>
+      <span class="fname">${a.meta.label}${a.meta.hint ? ` <em>· ${a.meta.hint}</em>` : ''}</span>
+      <span class="fsize">${mb(a.size)}</span></a></li>`;
+}
+
+function renderHero(groups, os, arch){
+  const hero = document.getElementById('hero');
+  const relUrl = `https://github.com/${REPO}/releases/latest`;
+
+  if (!os || !groups[os] || !groups[os].length){
+    hero.innerHTML = `<p class="hero-meta">Оберіть свою систему нижче</p>
+      <div class="btns"><a class="btn btn--ghost" href="${relUrl}">Переглянути всі файли</a></div>`;
+    return;
+  }
+
+  let picks = groups[os].slice().sort((a,b)=>a.meta.rank-b.meta.rank);
+  let extraNote = '';
+
+  if (os === 'mac'){
+    if (arch === 'arm')      picks = picks.filter(p => /arm64/.test(p.name));
+    else if (arch === 'x86') picks = picks.filter(p => /x64/.test(p.name));
+    else { picks = picks.slice(0,2);
+           extraNote = 'Не вдалось визначити процесор. Apple Silicon — це Mac з чипом M1 і новіші, Intel — випущені до 2020 року.'; }
+  } else {
+    picks = picks.slice(0,1);
+  }
+
+  const items = picks.map((p,i)=>
+    `<div class="dl">
+      <a class="btn ${i?'btn--ghost':''}" href="${DL(p.name)}" download>${DLICON}<span>Завантажити</span></a>
+      <div class="hero-meta">${ICONS[os]} ${OS_TITLE[os]} · ${p.meta.label}, ${mb(p.size)}</div>
+    </div>`).join('');
+
+  hero.innerHTML = `
+    <div class="dls">${items}</div>
+    ${extraNote ? `<div class="note">${extraNote}</div>` : ''}
+    ${noteHtml(OS_NOTE[os])}`;
+}
+
+function renderAll(groups){
+  const order = ['web','mac','win','linux'];
+  const cards = order.filter(os => groups[os] && groups[os].length).map(os => {
+    const files = groups[os].slice().sort((a,b)=>a.meta.rank-b.meta.rank).map(fileRow).join('');
+    const note = noteHtml(OS_NOTE[os], true);
+    return `<div class="card">
+        <h3>${ICONS[os]} ${OS_TITLE[os]}</h3>
+        <div class="hint">${OS_HINT[os]}</div>
+        <ul class="files">${files}</ul>
+        ${note}
+      </div>`;
+  }).join('');
+  document.getElementById('all').innerHTML = `<h2>Усі файли</h2><div class="grid">${cards}</div>`;
+}
+
+(async function(){
+  let rel;
+  try{
+    const r = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`,
+                          {headers:{Accept:'application/vnd.github+json'}});
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    rel = await r.json();
+  }catch(e){
+    document.getElementById('hero').innerHTML =
+      `<div class="state">Не вдалось отримати список версій.<br>
+       <a href="https://github.com/${REPO}/releases/latest">Відкрити сторінку релізів на GitHub</a></div>`;
+    document.getElementById('ver').textContent = '';
+    return;
+  }
+
+  const groups = {};
+  for (const a of (rel.assets || [])){
+    const meta = classify(a.name);
+    if (!meta) continue;
+    (groups[meta.os] = groups[meta.os] || []).push({name:a.name, size:a.size, meta});
+  }
+
+  const version = (rel.tag_name || '').replace(/^v/, '');
+  const os = detectOS();
+  const arch = os === 'mac' ? await detectArch() : null;
+
+  document.getElementById('ver').innerHTML = version ? `Версія <b>${version}</b>` : '';
+  renderHero(groups, os, arch);
+  renderAll(groups);
+  enhanceCodeBlocks();
+})();
+</script>
+</body>
+</html>
