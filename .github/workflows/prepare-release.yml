@@ -1,0 +1,53 @@
+# Creates the (empty) release that the private source repo then fills with
+# build artifacts.
+#
+# Why this indirection: a release is attributed to whoever CREATES it. When
+# electron-builder publishes straight from the private repo with a PAT, the
+# release shows that PAT's owner as author. Creating it here first, with this
+# repo's own GITHUB_TOKEN, makes the author github-actions[bot]; the assets
+# electron-builder uploads afterwards do not change it.
+#
+# Triggered by the private repo via repository_dispatch:
+#   gh api repos/3R-Tools/quick-map-releases/dispatches \
+#     -f event_type=prepare-release -F client_payload[tag]=v1.33.4
+
+name: 🤖 Prepare release
+
+on:
+  repository_dispatch:
+    types: [prepare-release]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to prepare (e.g. v1.33.4)'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create empty release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.client_payload.tag || github.event.inputs.tag }}
+        run: |
+          set -euo pipefail
+          test -n "$TAG" || { echo "No tag supplied"; exit 1; }
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists - nothing to do."
+            exit 0
+          fi
+
+          VERSION="${TAG#v}"
+          gh release create "$TAG" \
+            --title "Quick Map $VERSION" \
+            --notes "Завантажте версію для своєї системи нижче, або скористайтесь сторінкою завантажень: https://3r-tools.github.io/quick-map-releases/" \
+            --latest \
+            --target main
+          echo "Created $TAG as github-actions[bot]"

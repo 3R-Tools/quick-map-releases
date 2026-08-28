@@ -1,0 +1,567 @@
+[
+ {
+  "tag": "v2026.01.03",
+  "name": "Release 2026-01-03",
+  "body": "## Quick Map Offline Build\n\n**Build File:** `quick-map-offline-20260103-110942.zip`\n\n**Build Date:** $(date -u +\"%Y-%m-%d %H:%M:%S UTC\")\n\n### Installation\n\n1. Download the `quick-map-offline-20260103-110942.zip` file\n2. Extract the archive\n3. Open `index.html` in your web browser\n\n### Changes\n\nSee commit history for details.\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-03._"
+ },
+ {
+  "tag": "v1.1.0",
+  "name": "v1.1.0 - Semantic Versioning & Auto-Update",
+  "body": "## 🎉 Quick Map v1.1.0\n\n### 🆕 What's New\n\n**Version Format Change:**\n- Switched from date-based versioning (2026.01.03) to semantic versioning (1.1.0)\n- Easier to understand: MAJOR.MINOR.PATCH\n\n**✨ New Features:**\n- 🔄 **Automatic version checking** - App checks for updates on load\n- 📥 **One-click updates** - Download new versions directly from the app\n- 💾 **Smart caching** - Update status persists for 1 hour\n- 🔐 **Private repo support** - Works with both public and private repositories\n- 🎯 **Better UX** - Clear status messages and error handling\n\n**🎨 UI Improvements:**\n- Better close button styling with proper alignment\n- Added accessibility labels (aria-labels, titles)\n- Improved icon button consistency\n\n**🐛 Bug Fixes:**\n- Fixed CORS issues for private repository downloads\n- Fixed duplicate event listeners\n- Improved file download handling\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.1.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState LBZ\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-11._"
+ },
+ {
+  "tag": "v1.1.2",
+  "name": "v1.1.2 - Bug Fixes",
+  "body": "## 🎉 Quick Map v1.1.2\n\n### PATCH Release\n\nTranslation improvements: Added menu items and context menu translations. Fixed Nextcloud icon. Added favicon support for all platforms.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.1.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState LBZ\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-11._"
+ },
+ {
+  "tag": "v1.2.0",
+  "name": "v1.2.0 - Theme Selector",
+  "body": "## 🎉 Quick Map v1.2.0\n\n### MINOR Release - Theme Selector\n\nAdded comprehensive theme support with Auto/Light/Dark modes!\n\n#### 🌓 New Features\n\n**Theme Selector**\n- Auto mode: Follows system color scheme preference\n- Light mode: Clean, bright interface\n- Dark mode: Easy on the eyes for night use\n- Remembers your theme preference\n- Smooth theme switching without page reload\n\n**Smart Basemap Switching**\n- Automatically switches basemap based on theme\n- Light mode defaults to Positron basemap\n- Dark mode defaults to Dark basemap\n- Remembers your basemap choice per theme\n- Seamless transitions when changing themes\n\n**Dark Mode UI**\n- Complete dark theme for all interface elements\n- Dark mode for map controls and popups\n- Dark mode for tables (AG Grid)\n- Dark mode for all modals and dropdowns\n- Optimized contrast and readability\n\n#### 🌍 Translation Support\n- Full Ukrainian and English translations\n- Theme selector integrated with language system\n\n### 📦 Installation\n\n1. Download \\`quick-map-offline-1.2.0.zip\\`\n2. Extract the archive\n3. Open \\`index.html\\` in your browser\n4. Internet needed only for map tiles and DeepState LBZ\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - all your settings, preferences, and saved data will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-12._"
+ },
+ {
+  "tag": "v1.3.0",
+  "name": "v1.3.0 - Dark Theme Improvements & Fixes",
+  "body": "## 🎉 Quick Map v1.3.0\n\n### MINOR Release - Dark Theme Improvements & Fixes\n\nComplete dark theme refinement with critical bug fixes and UX improvements!\n\n#### 🐛 **Critical Fixes**\n\n**Basemap Switching**\n- Fixed basemap not changing when switching themes\n- Made `map` and `baseMaps` globally accessible\n- Enhanced switching logic to properly remove old basemap before adding new\n- Radio buttons in layer control now correctly reflect the active basemap\n\n**White Flash Prevention**\n- Eliminated bright flash on page load\n- Added inline theme script in `<head>` that runs before page renders\n- Theme now applied instantly for seamless dark mode experience\n\n#### ✨ **New Features**\n\n**Automatic Marker Colors**\n- Points automatically adapt to theme:\n  - **Dark theme:** White fill (#ffffff) with black border (#000000)\n  - **Light theme:** Restores your custom colors\n- Colors are saved and restored when switching themes\n\n#### 🎨 **Complete Dark Theme Adaptations**\n\n**Controls & Inputs**\n- Line numbers: Darker background (#36363a), borderless\n- Download button: White SVG icons, disabled opacity (0.4)\n- Custom control buttons: Inverted colors for visibility\n- Range sliders: Active blue color (#4a9eff)\n- Checkboxes: Active blue when checked\n- Color pickers: Styled to match select dropdowns\n- Label style select: Consistent with language dropdown\n\n**Modals & Popups**\n- Settings modal: Darker borders, cleaner header\n- CSV edit modal: Complete dark theme for all elements\n- Download dropdown: Dark hover states and separators\n- Menu popup: Darker borders (#444)\n- All buttons: Proper grey/blue styling\n\n**General UI**\n- SVG logo: Uses currentColor for theme adaptation\n- Secondary buttons: Grey style (#3a3a3a)\n- Range values: Dark backgrounds and borders\n- All text: Optimized contrast and readability\n\n#### 🔧 **Technical Improvements**\n\n- Removed duplicate layer control initialization\n- Enhanced `switchBasemapForTheme` function\n- Added `updateMarkerColorsForTheme` with localStorage\n- Inline theme detection script prevents FOUC\n- Better global variable management\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.3.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState LBZ\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - all your settings, theme preferences, and custom colors will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-12._"
+ },
+ {
+  "tag": "v1.4.3",
+  "name": "v1.4.3 - ",
+  "body": "## 🎉 Quick Map v1.4.3\n\n### FORCED Release\n\nFix offline build\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.4.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState LBZ\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-17._"
+ },
+ {
+  "tag": "v1.5.0",
+  "name": "v1.5.0 - ",
+  "body": "## 🎉 Quick Map v1.5.0\n\n### FORCED Release\n\nAdd polyline feature\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.5.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-19._"
+ },
+ {
+  "tag": "v1.5.2",
+  "name": "v1.5.2 - ",
+  "body": "## 🎉 Quick Map v1.5.2\n\n### FORCED Release\n\nMultipoints parsing\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.5.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-20._"
+ },
+ {
+  "tag": "v1.5.3",
+  "name": "v1.5.3 - Bug Fixes",
+  "body": "## 🎉 Quick Map v1.5.3\n\n### PATCH Release\n\nFix storage cache\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.5.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-20._"
+ },
+ {
+  "tag": "v1.5.4",
+  "name": "v1.5.4 - Bug Fixes",
+  "body": "## 🎉 Quick Map v1.5.4\n\n### PATCH Release\n\nFix colors\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.5.4.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-20._"
+ },
+ {
+  "tag": "v1.5.5",
+  "name": "v1.5.5 - Bug Fixes",
+  "body": "## 🎉 Quick Map v1.5.5\n\n### PATCH Release\n\nAdd auto update in Electron\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.5.5.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-20._"
+ },
+ {
+  "tag": "v1.5.8",
+  "name": "v1.5.8 - Some improvement to app",
+  "body": "## 🎉 Quick Map v1.5.8\r\n\r\n### FORCED Release\r\n\r\nSome new features\r\n\r\n### 📦 Installation\r\n\r\n1. Download `quick-map-offline-1.5.8.zip`\r\n2. Extract the archive\r\n3. Open `index.html` in your browser\r\n4. Internet needed only for map tiles and DeepState FLET\r\n\r\n### 🔄 Updating from Previous Versions\r\n\r\nSimply download this version - your settings and preferences will be preserved!\r\n\r\n### 📝 Full Changelog\r\n\r\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\r\n\r\n---\r\n\r\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-23._"
+ },
+ {
+  "tag": "v1.5.9",
+  "name": "v1.5.9 - ",
+  "body": "## 🎉 Quick Map v1.5.9\n\n### FORCED Release\n\nFix build\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.5.9.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-23._"
+ },
+ {
+  "tag": "v1.6.0",
+  "name": "v1.6.0 - ",
+  "body": "## 🎉 Quick Map v1.6.0\n\n### FORCED Release\n\nAdd auto WGS XY-YX detection and settings.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.6.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-24._"
+ },
+ {
+  "tag": "v1.6.1",
+  "name": "v1.6.1 - ",
+  "body": "## 🎉 Quick Map v1.6.1\n\n### FORCED Release\n\nFix WGS update\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.6.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-24._"
+ },
+ {
+  "tag": "v1.6.2",
+  "name": "v1.6.2 - ",
+  "body": "## 🎉 Quick Map v1.6.2\n\n### FORCED Release\n\nFix square setting popup.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.6.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-26._"
+ },
+ {
+  "tag": "v1.6.3",
+  "name": "v1.6.3 - ",
+  "body": "## 🎉 Quick Map v1.6.3\n\n### FORCED Release\n\nAdd Delta Import Settings in web version\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.6.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-26._"
+ },
+ {
+  "tag": "v1.7.0",
+  "name": "v1.7.0 - ",
+  "body": "## 🎉 Quick Map v1.7.0\n\n### FORCED Release\n\nNew fetures\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-29._"
+ },
+ {
+  "tag": "v1.7.1",
+  "name": "v1.7.1 - ",
+  "body": "## 🎉 Quick Map v1.7.1\n\n### FORCED Release\n\nFix layers removing\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-29._"
+ },
+ {
+  "tag": "v1.7.2",
+  "name": "v1.7.2 - ",
+  "body": "## 🎉 Quick Map v1.7.2\n\n### FORCED Release\n\nFix css\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-29._"
+ },
+ {
+  "tag": "v1.7.3",
+  "name": "v1.7.3 - ",
+  "body": "## 🎉 Quick Map v1.7.3\n\n### FORCED Release\n\nAdd translation to drawing tools\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-29._"
+ },
+ {
+  "tag": "v1.7.5",
+  "name": "v1.7.5 - ",
+  "body": "## 🎉 Quick Map v1.7.5\n\n### FORCED Release\n\nAdd label styles\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.5.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-29._"
+ },
+ {
+  "tag": "v1.7.6",
+  "name": "v1.7.6 - ",
+  "body": "## 🎉 Quick Map v1.7.6\n\n### FORCED Release\n\nFix bugs and add context menu coordinates\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.6.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-30._"
+ },
+ {
+  "tag": "v1.7.7",
+  "name": "v1.7.7 - ",
+  "body": "## 🎉 Quick Map v1.7.7\n\n### FORCED Release\n\nSome fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.7.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-01-30._"
+ },
+ {
+  "tag": "v1.7.8",
+  "name": "v1.7.8 - ",
+  "body": "## 🎉 Quick Map v1.7.8\n\n### FORCED Release\n\nAdd parsing (XXXXXXX YYYYYYY)\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.8.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-02-02._"
+ },
+ {
+  "tag": "v1.7.9",
+  "name": "v1.7.9 - ",
+  "body": "## 🎉 Quick Map v1.7.9\n\n### FORCED Release\n\nSome fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.9.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-02-02._"
+ },
+ {
+  "tag": "v1.7.10",
+  "name": "v1.7.10 - ",
+  "body": "## 🎉 Quick Map v1.7.10\n\n### FORCED Release\n\nFix SK42 parsing\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.10.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-02-02._"
+ },
+ {
+  "tag": "v1.7.11",
+  "name": "v1.7.11 - ",
+  "body": "## 🎉 Quick Map v1.7.11\n\n### FORCED Release\n\nImprove parsing formats\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.11.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-02-02._"
+ },
+ {
+  "tag": "v1.7.12",
+  "name": "v1.7.12 - ",
+  "body": "## 🎉 Quick Map v1.7.12\n\n### FORCED Release\n\nImprove line/poly labeling\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.12.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-02-03._"
+ },
+ {
+  "tag": "v1.7.13",
+  "name": "v1.7.13 - ",
+  "body": "## 🎉 Quick Map v1.7.13\n\n### FORCED Release\n\nSome fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.7.13.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-02-04._"
+ },
+ {
+  "tag": "v1.8.3",
+  "name": "v1.8.3 - ",
+  "body": "## 🎉 Quick Map v1.8.3\n\n### FORCED Release\n\n\"Stable line ID: Points/Polyline/Polygon mode no longer resets when editing row text; guide updated.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.8.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-02-26._"
+ },
+ {
+  "tag": "v1.8.5",
+  "name": "v1.8.5 - ",
+  "body": "## 🎉 Quick Map v1.8.5\n\n### FORCED Release\n\nAdd nearest place in context menu\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.8.5.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-02-26._"
+ },
+ {
+  "tag": "v1.8.6",
+  "name": "v1.8.6 - ",
+  "body": "## 🎉 Quick Map v1.8.6\n\n### FORCED Release\n\nNearest place in context menu and some fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.8.6.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-02-27._"
+ },
+ {
+  "tag": "v1.9.0",
+  "name": "v1.9.0 - ",
+  "body": "## 🎉 Quick Map v1.9.0\n\n### FORCED Release\n\nAdd table drafts\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.9.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-17._"
+ },
+ {
+  "tag": "v1.9.3",
+  "name": "v1.9.3 - ",
+  "body": "## 🎉 Quick Map v1.9.3\n\n### FORCED Release\n\nUpd\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.9.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-20._"
+ },
+ {
+  "tag": "v1.9.4",
+  "name": "v1.9.4 - ",
+  "body": "## 🎉 Quick Map v1.9.4\n\n### FORCED Release\n\nSome fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.9.4.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-20._"
+ },
+ {
+  "tag": "v1.9.5",
+  "name": "v1.9.5 - ",
+  "body": "## 🎉 Quick Map v1.9.5\n\n### FORCED Release\n\nChange base sidc to 10061500000000000000\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.9.5.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-20._"
+ },
+ {
+  "tag": "v1.9.7",
+  "name": "v1.9.7 - ",
+  "body": "## 🎉 Quick Map v1.9.7\n\n### FORCED Release\n\nEnable more grid functions\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.9.7.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-21._"
+ },
+ {
+  "tag": "v1.9.8",
+  "name": "v1.9.8 - ",
+  "body": "## 🎉 Quick Map v1.9.8\n\n### FORCED Release\n\nFix icons\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.9.8.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-22._"
+ },
+ {
+  "tag": "v1.10.0",
+  "name": "v1.10.0 - ",
+  "body": "## 🎉 Quick Map v1.10.0\n\n### FORCED Release\n\nDrawing: show coords and add to export\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.10.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-23._"
+ },
+ {
+  "tag": "v1.10.1",
+  "name": "v1.10.1 - ",
+  "body": "## 🎉 Quick Map v1.10.1\n\n### FORCED Release\n\nFix drawing settings\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.10.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-23._"
+ },
+ {
+  "tag": "v1.10.2",
+  "name": "v1.10.2 - ",
+  "body": "## 🎉 Quick Map v1.10.2\n\n### FORCED Release\n\nFix theme\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.10.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-24._"
+ },
+ {
+  "tag": "v1.10.4",
+  "name": "v1.10.4 - ",
+  "body": "## 🎉 Quick Map v1.10.4\n\n### FORCED Release\n\nOffline quick loading fix\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.10.4.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-30._"
+ },
+ {
+  "tag": "v1.10.5",
+  "name": "v1.10.5 - ",
+  "body": "## 🎉 Quick Map v1.10.5\n\n### FORCED Release\n\nOffline fix\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.10.5.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-30._"
+ },
+ {
+  "tag": "v1.10.7",
+  "name": "v1.10.7 - ",
+  "body": "## 🎉 Quick Map v1.10.7\n\n### FORCED Release\n\nAdd MGRS short\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.10.7.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-03-31._"
+ },
+ {
+  "tag": "v1.10.8",
+  "name": "v1.10.8 - ",
+  "body": "## 🎉 Quick Map v1.10.8\n\n### FORCED Release\n\nAdd snap context menu to points\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.10.8.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-04-28._"
+ },
+ {
+  "tag": "v1.10.9",
+  "name": "v1.10.9 - ",
+  "body": "## 🎉 Quick Map v1.10.9\n\n### FORCED Release\n\nClick number to select row\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.10.9.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-04-28._"
+ },
+ {
+  "tag": "v1.10.10",
+  "name": "v1.10.10 - ",
+  "body": "## 🎉 Quick Map v1.10.10\n\n### FORCED Release\n\nFix zoom levels\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.10.10.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-04-29._"
+ },
+ {
+  "tag": "v1.11.0",
+  "name": "v1.11.0 - ",
+  "body": "## 🎉 Quick Map v1.11.0\n\n### FORCED Release\n\nAdd more comments in table\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.11.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-04-30._"
+ },
+ {
+  "tag": "v1.13.0",
+  "name": "v1.13.0 - ",
+  "body": "## 🎉 Quick Map v1.13.0\n\n### FORCED Release\n\nAdd highlight to the aommed point/square at map\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.13.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-04-30._"
+ },
+ {
+  "tag": "v1.13.1",
+  "name": "v1.13.1 - ",
+  "body": "## 🎉 Quick Map v1.13.1\n\n### FORCED Release\n\nFix highlight focused points\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.13.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-04-30._"
+ },
+ {
+  "tag": "v1.13.2",
+  "name": "v1.13.2 - ",
+  "body": "## 🎉 Quick Map v1.13.2\n\n### FORCED Release\n\nSome fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.13.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-04-30._"
+ },
+ {
+  "tag": "v1.13.3",
+  "name": "v1.13.3 - ",
+  "body": "## 🎉 Quick Map v1.13.3\n\n### FORCED Release\n\nAdd highlight to polyline and polygon\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.13.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-04-30._"
+ },
+ {
+  "tag": "v1.13.6",
+  "name": "v1.13.6 - ",
+  "body": "## 🎉 Quick Map v1.13.6\n\n### FORCED Release\n\nFix parsing and some fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.13.6.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-04-30._"
+ },
+ {
+  "tag": "v1.13.7",
+  "name": "v1.13.7 - ",
+  "body": "## 🎉 Quick Map v1.13.7\n\n### FORCED Release\n\nAdd use large edits fields\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.13.7.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-01._"
+ },
+ {
+  "tag": "v1.13.8",
+  "name": "v1.13.8 - ",
+  "body": "## 🎉 Quick Map v1.13.8\n\n### FORCED Release\n\nSome fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.13.8.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-02._"
+ },
+ {
+  "tag": "v1.14.4",
+  "name": "v1.14.4 - ",
+  "body": "## 🎉 Quick Map v1.14.4\n\n### FORCED Release\n\nFixes and panel settings\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.14.4.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-05._"
+ },
+ {
+  "tag": "v1.14.5",
+  "name": "v1.14.5 - ",
+  "body": "## 🎉 Quick Map v1.14.5\n\n### FORCED Release\n\npanel settings to menu\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.14.5.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-05._"
+ },
+ {
+  "tag": "v1.15.0",
+  "name": "v1.15.0 - ",
+  "body": "## 🎉 Quick Map v1.15.0\n\n### FORCED Release\n\nAdvanced parsing\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.15.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-05._"
+ },
+ {
+  "tag": "v1.15.1",
+  "name": "v1.15.1 - ",
+  "body": "## 🎉 Quick Map v1.15.1\n\n### FORCED Release\n\nFix adv parsing\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.15.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-05._"
+ },
+ {
+  "tag": "v1.15.2",
+  "name": "v1.15.2 - ",
+  "body": "## 🎉 Quick Map v1.15.2\n\n### FORCED Release\n\nАшч глFix ukrinian\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.15.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-05._"
+ },
+ {
+  "tag": "v1.15.5",
+  "name": "v1.15.5 - ",
+  "body": "## 🎉 Quick Map v1.15.5\n\n### FORCED Release\n\nMass copy line type\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.15.5.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-05._"
+ },
+ {
+  "tag": "v1.16.0",
+  "name": "v1.16.0 - ",
+  "body": "## 🎉 Quick Map v1.16.0\n\n### FORCED Release\n\nAdd angle measure tool\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.16.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-06._"
+ },
+ {
+  "tag": "v1.16.2",
+  "name": "v1.16.2 - ",
+  "body": "## 🎉 Quick Map v1.16.2\n\n### FORCED Release\n\nFix angle measures\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.16.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-06._"
+ },
+ {
+  "tag": "v1.16.3",
+  "name": "v1.16.3 - ",
+  "body": "## 🎉 Quick Map v1.16.3\n\n### FORCED Release\n\nFix azimuths\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.16.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-06._"
+ },
+ {
+  "tag": "v1.16.4",
+  "name": "v1.16.4 - ",
+  "body": "## 🎉 Quick Map v1.16.4\n\n### FORCED Release\n\nAzimuth local\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.16.4.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-06._"
+ },
+ {
+  "tag": "v1.17.1",
+  "name": "v1.17.1 - ",
+  "body": "## 🎉 Quick Map v1.17.1\n\n### FORCED Release\n\nFile fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.17.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-08._"
+ },
+ {
+  "tag": "v1.17.3",
+  "name": "v1.17.3 - ",
+  "body": "## 🎉 Quick Map v1.17.3\n\n### FORCED Release\n\nText highlighter\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.17.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-08._"
+ },
+ {
+  "tag": "v1.17.4",
+  "name": "v1.17.4 - ",
+  "body": "## 🎉 Quick Map v1.17.4\n\n### FORCED Release\n\nAdd grid\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.17.4.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-12._"
+ },
+ {
+  "tag": "v1.17.5",
+  "name": "v1.17.5 - ",
+  "body": "## 🎉 Quick Map v1.17.5\n\n### FORCED Release\n\nSearch in objects\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.17.5.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-14._"
+ },
+ {
+  "tag": "v1.17.6",
+  "name": "v1.17.6 - ",
+  "body": "## 🎉 Quick Map v1.17.6\n\n### FORCED Release\n\nAdd colorpicker and custom colors\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.17.6.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-15._"
+ },
+ {
+  "tag": "v1.17.7",
+  "name": "v1.17.7 - ",
+  "body": "## 🎉 Quick Map v1.17.7\n\n### FORCED Release\n\nSome fixes and mini updates\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.17.7.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-15._"
+ },
+ {
+  "tag": "v1.17.8",
+  "name": "v1.17.8 - ",
+  "body": "## 🎉 Quick Map v1.17.8\n\n### FORCED Release\n\nTooltip upd\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.17.8.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-16._"
+ },
+ {
+  "tag": "v1.18.1",
+  "name": "v1.18.1 - ",
+  "body": "## 🎉 Quick Map v1.18.1\n\n### FORCED Release\n\nNew symbol picker and templates autocompletes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.18.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-16._"
+ },
+ {
+  "tag": "v1.18.2",
+  "name": "v1.18.2 - ",
+  "body": "## 🎉 Quick Map v1.18.2\n\n### FORCED Release\n\nNew symbol for layer\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.18.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-17._"
+ },
+ {
+  "tag": "v1.19.0",
+  "name": "v1.19.0 - ",
+  "body": "## 🎉 Quick Map v1.19.0\n\n### FORCED Release\n\nAutodetect sidc\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.19.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-18._"
+ },
+ {
+  "tag": "v1.20.0",
+  "name": "v1.20.0 - ",
+  "body": "## 🎉 Quick Map v1.20.0\n\n### FORCED Release\n\nAdd APQ files parsing\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.20.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-20._"
+ },
+ {
+  "tag": "v1.20.1",
+  "name": "v1.20.1 - ",
+  "body": "## 🎉 Quick Map v1.20.1\n\n### FORCED Release\n\nSome fixes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.20.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-20._"
+ },
+ {
+  "tag": "v1.21.0",
+  "name": "v1.21.0 - ",
+  "body": "## 🎉 Quick Map v1.21.0\n\n### FORCED Release\n\nAdd PGD support\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.21.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-20._"
+ },
+ {
+  "tag": "v1.21.1",
+  "name": "v1.21.1 - ",
+  "body": "## 🎉 Quick Map v1.21.1\n\n### FORCED Release\n\nSearch highlight time and snap\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.21.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-22._"
+ },
+ {
+  "tag": "v1.21.2",
+  "name": "v1.21.2 - ",
+  "body": "## 🎉 Quick Map v1.21.2\n\n### FORCED Release\n\nGet colors from files\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.21.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-23._"
+ },
+ {
+  "tag": "v1.22.0",
+  "name": "v1.22.0 - ",
+  "body": "## 🎉 Quick Map v1.22.0\n\n### FORCED Release\n\nAdd clusters\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.22.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-05-31._"
+ },
+ {
+  "tag": "v1.23.0",
+  "name": "v1.23.0 - ",
+  "body": "## 🎉 Quick Map v1.23.0\n\n### FORCED Release\n\nAdd attachmentw to Dexlta export\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.23.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-06-01._"
+ },
+ {
+  "tag": "v1.24.0",
+  "name": "v1.24.0 - ",
+  "body": "## 🎉 Quick Map v1.24.0\n\n### FORCED Release\n\nAdd routes\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.24.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-06-04._"
+ },
+ {
+  "tag": "v1.25.0",
+  "name": "v1.25.0",
+  "body": "_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-06-06._"
+ },
+ {
+  "tag": "v1.26.0",
+  "name": "v1.26.0 - ",
+  "body": "## 🎉 Quick Map v1.26.0\n\n### FORCED Release\n\nAdd OSM picker\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.26.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/docs/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-06-06._"
+ },
+ {
+  "tag": "v1.26.2",
+  "name": "v1.26.2 - ",
+  "body": "🗺️ Quick Map — 1.26.2\n\nНамальовані фігури зручні як чернетка, але вони не потрапляли в шари й не експортувалися — доводилось переносити координати вручну. Тепер тимчасове малювання можна «підняти» в постійний файловий шар так само, як об'єкти з OSM pick або маршрутів: вибрав, додав на шар — і фігура вже частина проєкту.\n\n📐 Кнопка «На шар» у панелі редагування малювання (між «Редагувати» та «Видалити») — активна, коли на карті є малюнки. Відкриває панель вибору та додавання на шар.\n👆 Вибір фігур — клік по кожній або Ctrl/Cmd+виділення області на карті (як у OSM pick). Кутові вимірювання не перетворюються.\n💾 «Додати на шар» — обрані точки, лінії, полігони, прямокутники та кола стають об'єктами файлового шару; з шару малювання вони зникають. Можна додати в існуючий шар або створити новий «Drawn 1», «Drawn 2»…\n📄 Меню збереження — GeoJSON або одразу «Додати в новий шар». Пакетний вхід: налаштування малювання (⚙) → «Перетворити малюнок на шар…» з попереднім вибором усіх фігур.\n📖 Оновлено онбординг, користувацький гайд (укр/англ) і переклади інтерфейсу.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.26.2.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-06-07._"
+ },
+ {
+  "tag": "v1.26.9",
+  "name": "v1.26.9 - ",
+  "body": "## 🎉 Quick Map v1.26.9\n\n### FORCED Release\n\nUpd templates\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.26.9.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/docs/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-06-16._"
+ },
+ {
+  "tag": "v1.26.10",
+  "name": "v1.26.10 - ",
+  "body": "## 🎉 Quick Map v1.26.10\n\n### FORCED Release\n\nfiles meta info, dwell points\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.26.10.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/docs/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-06-18._"
+ },
+ {
+  "tag": "v1.26.11",
+  "name": "v1.26.11 - ",
+  "body": "🗺️ Quick Map — 1.26.11\n\nПісля релізу APQ і шаблонів фраз з’явились дрібні, але болючі речі в щоденній роботі: довгі коментарі в CSV обрізались, дати в шаблонах виглядали «по-ISO», кутові елементи керування на карті не вміщались на маленькому екрані, а при малюванні було важко потрапити точно в існуючу геометрію. Цей випуск допилює ці деталі, додає snap при малюванні й захист від випадкових змін у великих модальних редакторах.\n\n📅 Змінні `{observation_datetime}` та `{end_datetime}` у шаблонах фраз — форматуються як DD/MM/YYYY HH:MM замість ISO-рядка.\n📋 CSV-коментарі — знято обмеження ag-Grid у 200 символів; довгі тексти відкриваються у повноекранному редакторі без обрізання.\n🔒 Блокування модалок CSV і Gaia — кнопка «замок» у заголовку запобігає випадковому редагуванню під час перегляду.\n🗺️ Прокрутка елементів керування — у правому верхньому куті карти пошук і шари залишаються на місці, решта кнопок прокручується колесом миші; те саме для нижнього правого кута.\n📐 Режим кутових вимірювань — автоматично вимикається при перемиканні інструментів малювання на панелі.\n🧲 «Прив’язка при малюванні» — у налаштуваннях поведінки малювання можна увімкнути snap до існуючих точок, ліній і вершин; працює для маркерів, ліній, полігонів і кутових вимірювань.\n📌 Липкий заголовок файлового шару — при прокрутці довгого списку точок шапка шару й назва файлу залишаються видимими (для шарів від 10 точок).\n📖 Оновлено README для локальних тайлів; оновлено довідник підрозділів (units_orbit_tree).\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.26.11.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-06-25._"
+ },
+ {
+  "tag": "v1.26.14",
+  "name": "v1.26.14 - ",
+  "body": "## 🎉 Quick Map v1.26.14\n\n### FORCED Release\n\nKropyva support\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.26.14.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n### 🔄 Updating from Previous Versions\n\nSimply download this version - your settings and preferences will be preserved!\n\n### 📝 Full Changelog\n\nSee [CHANGELOG.md](https://github.com/alexkolodko/quick-map/blob/main/docs/CHANGELOG.md) for complete details.\n\n---\n\n**Made with ❤️ for Ukraine** 🇺🇦\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-02._"
+ },
+ {
+  "tag": "v1.27.0",
+  "name": "v1.27.0 - ",
+  "body": "🗺️ Quick Map — 1.27.0\n\nНа карті часто потрібно не лише точки з координат, а й пояснювальні накладки — схеми, підписи, стрілки. Раніше для цього доводилось йти в зовнішній редактор; тепер у лівій панелі з’явилась секція «Анотації» з прив’язаними до місцевості зображеннями, текстом, виносками та фігурами. Фігури з підписом редагуються як один об’єкт — без окремого пункту в списку; заодно допиляно підказки у виборі об’єктів OSM.\n\n🗺️ Секція «Анотації» — окремий блок у лівій панелі: список об’єктів, згортання секції, редагування у слоті під списком; анотації не змішуються зі шарами координат.\n🖼️ Зображення на карті — завантаження файлу, клік або перетягування для розміщення й масштабу в метрах; обрізка маркерами, прозорість, переміщення та зміна розміру.\n✏️ Текстові мітки — шрифт, колір, фон, вирівнювання, жирний/курсив/підкреслення; опція «Масштабувати із зумом», щоб підпис лишався читабельним на різних масштабах.\n💬 Виноски — текстова мітка з точкою на карті та лінією-вказівником; опційно зображення всередині, нумерація, колір контуру.\n📐 Фігури — лінія, полігон, прямокутник, еліпс: обводка, заливка, поворот маркером; підпис створюється разом із фігурою.\n🔗 Фігура + підпис — один слот редагування з секціями «Фігура» та «Підпис»; колір обводки синхронізується з контуром виноски; у списку показується текст підпису замість типу фігури.\n🖱️ Перетягування виноски — блок підпису можна переміщати на карті, коли обрано фігуру; курсор grab/grabbing і перемикання фокусу між фігурою та підписом кліком.\n🎨 Порядок накладання — «На передній план» / «На задній план» для перекриття кількох анотацій.\n🧪 Демо-режим `?anno` — при відкритті з цим параметром (наприклад `?demo&anno`) на карту підвантажуються зразки тексту, виносок і фігур.\n🗺️ Вибір OSM — панель довідки про фільтри (рівні масштабу, пресети, власні теги); узгоджені пороги зуму та повідомлення про доступність фільтрів.\n📖 Онбординг і переклади (UK/EN) для нових елементів анотацій та довідки OSM.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.27.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-06._"
+ },
+ {
+  "tag": "v1.27.1",
+  "name": "v1.27.1 - Arrow annotations",
+  "body": "🗺️ Quick Map — 1.27.1\n\nПісля великого блоку анотацій у 1.27.0 залишалась типова діра — вказати напрямок або зону на схемі кривою стрілкою, а не лише лінією чи полігоном. Додано окремий тип фігури «Стрілка» з дугою, маркерами редагування та товщиною, що масштабується разом із зумом карти.\n\n🏹 Фігура «Стрілка» — нова кнопка в панелі анотацій: клік по початку, потім по кінцю; далі можна підігнати вигин дуги.\n🎯 Три маркери — початок, кінець і точка дуги для точного напряму та кривизни; стрілку можна повертати й перетягувати як інші фігури.\n📏 «Масштабувати із зумом» — для стрілки увімкнено за замовчуванням: товщина лінії та наконечник лишаються пропорційними при зміні масштабу карти.\n🎨 Акуратний наконечник — трикутник пропорційний товщині обводки; стовбур обрізається під головку, щоб товсті лінії з’єднувались без артефактів.\n🔗 Стрілка + підпис — працює разом із виноскою в одному слоті редагування, як інші фігури з підписом.\n🧪 Демо `?anno` — додано зразок «Стрілка + виноска».\n📖 Переклади (UK/EN) для нових підказок розміщення та редагування дуги.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.27.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-07._"
+ },
+ {
+  "tag": "v1.28.0",
+  "name": "v1.28.0 - Document Import",
+  "body": "🗺️ Quick Map — 1.28.0\n\nДонесення та ІБД зазвичай прилітають файлами Word, Excel або PDF, і координати з них доводилось витягувати вручну рядок за рядком. Тепер такий файл можна просто кинути на карту — апка сама пройде всі абзаци й таблиці, знайде координати та створить шар з точками, лініями й квадратами. Правила розбору звірені з milgeo і перевірені на реальних донесеннях.\n\n📄 Імпорт документів DOCX / XLSX / PDF — через кнопку «Додати файл» або перетягуванням; кожен документ стає окремим шаром з обʼєктами.\n🔍 Розбір усіх звичних форматів — MGRS (у т.ч. кирилицею), WGS84 (десяткові, ДМС, авіаційний 482837N 0374129E), СК-42/УСК-2000 X/Y, посилання Google Maps; дати, частоти й час («18.00 11.05.2026», «340-630 МГц») більше не перетворюються на точки.\n📊 Таблиці зі стовпчиками Х та У — координати в окремих колонках розпізнаються за заголовками (Х/У, широта/довгота, lat/lon), кожен рядок стає точкою з назвою з сусідніх колонок.\n🧭 Квадрати з контекстом — код «(9526)» отримує префікс із повних координат того ж документа й дає один квадрат замість перебору всіх діапазонів; без повних координат використовуються діапазони з налаштувань квадратів.\n📍 Скорочені координати «(Х96449 У54655)» — відновлюються за контекстом документа; точки одного донесення тримаються поруч навіть на межі 100-км смуг, а ступінь впевненості пишеться у властивості обʼєкта.\n🏷️ Кілька квадратів в одному рядку — кожен стає окремим обʼєктом зі своєю назвою («ДОЛГАЯ БАЛКА (7497) – ТОРЕЦКОЕ (7579)» → два квадрати з підписами).\n⚙️ Бібліотеки SheetJS та pdf.js вшиті локально й довантажуються лише при потребі — початкове завантаження не сповільнюється, офлайн-збірка працює без інтернету.\n🧪 Регресійна перевірка `scripts/verify-document-parsing.mjs` — корпус реальних рядків з донесень плюс сканування справжніх .docx на хибні спрацювання.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.28.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-08._"
+ },
+ {
+  "tag": "v1.28.1",
+  "name": "v1.28.1 - Bug Fixes",
+  "body": "🗺️ Quick Map — 1.28.1\n\nПісля імпорту документів у 1.28.0 виявився ще один частий сценарій: дані по цілях і звіти прилітають не лише DOCX/XLSX/PDF, а й CSV з різними схемами полів. Раніше такий файл або не імпортувався зовсім, або забирав лише частину координат. У цьому патчі добитий саме CSV-розбір під реальні вивантаження з Quiver і звітів.\n\n🗺️ CSV з Quiver і звітів — імпорт тепер розуміє кілька форматів колонок одночасно: WKT у `Геометрія` або `coordinates`, координатні пари на кшталт `Широта і довгота`, `Вхідна локація`, `coordinates(wgs,yx)`, а також звичні `x/y`, `lat/lon`.\n🏷️ Назва з Quiver — для обʼєктів із Quiver поле `Назва` автоматично мапиться в стандартний `name`, тому підписи на карті та в шарі показуються без ручного допилу.\n📦 Сирі властивості CSV — усі колонки з рядка зберігаються у властивостях імпортованого обʼєкта, навіть якщо вони не беруть участі у визначенні геометрії.\n🔧 Мʼякше розпізнавання заголовків — парсер нормалізує локалізовані та «шумні» назви колонок, тому імпорт менше ламається через дужки, пробіли, різні мови або дрібні відмінності в експорті.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.28.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-08._"
+ },
+ {
+  "tag": "v1.29.0",
+  "name": "v1.29.0 - ",
+  "body": "🗺️ Quick Map — 1.29.0\n\nУ планах і донесеннях маршрут часто записаний не координатами, а ланцюжком н.п. — «Селидово, Михайловка, Донецк…» з примітками в дужках. Раніше такий текст доводилось розкладати вручну по точках на карті. Тепер у панелі «Маршрути» з’явилась друга вкладка: вставляєш список, апка розпізнає населені пункти, знайде їх на карті й побудує маршрут.\n\n🛣️ «Маршрут за н.п.» — нова вкладка в інструменті маршрутів: вставляєш текстовий список населених пунктів, натискаєш «Розпізнати», далі — «Побудувати маршрут».\n📍 Парсер списку — розуміє н.п., пгт, смт, с., г., підказки регіону (ДНР/ЛНР), примітки в дужках і злиплі рядки без ком; у тому ж списку можна змішувати назви з координатами WGS, MGRS, УСК-2000.\n🗺️ Геокодування — спочатку локальна база населених пунктів України з варіантами російсько-українських назв, потім Nominatim як запасний варіант; для ДНР/ЛНР враховується регіональна прив’язка.\n🔍 Перевірка перед побудовою — список знайдених точок із статусом, виключення сумнівних (далеко від сусідів), повторний пошук і ручне виключення/повернення пунктів.\n🛣️ Тип маршруту — пряма лінія або дорогами через OpenRouteService/OSRM; якщо дорожній сегмент не знайдено, підставляється пряма.\n💾 Збереження в шар — готовий маршрут і точки можна додати на існуючий шар.\n📑 Вкладки в панелі маршрутів — класичний побудовник між точками на карті та новий текстовий режим в одному вікні.\n📖 Онбординг і переклади (UK/EN) для нової вкладки.\n⏳ Індикатори завантаження — спінер під час геокодування списку н.п., у рядках «шукаємо» та в результатах ручного пошуку; видно прогрес «Геокодування N/M».\n🎨 Панель маршрутів — точніше позиціонування на екрані (відступи зверху й знизу), трохи більша робоча висота вікна.\n♿ Кнопки в списку н.п. — aria-label для повторного пошуку, акуратна SVG-іконка лупи замість емодзі.\n⏱️ Таймаути запитів — маршрутизація (ORS/OSRM) і геокодування (Nominatim) не зависають безкінечно; при перевищенні часу очікування показується зрозуміла причина.\n🛠️ Зрозумілі помилки мережі — замість сирого тексту з консолі: «мережа недоступна», «час очікування вичерпано», «ліміт запитів», «немає API-ключа ORS», «маршрут дорогами не знайдено».\n📋 Зведення при пропусках н.п. — після геокодування видно, скільки пунктів не знайдено і через яку причину; під час очікування ліміту Nominatim — підказка «ліміт запитів, очікування…».\n🛣️ Причина fallback на пряму — якщо дорожній сегмент не вдалось побудувати, у попередженні з’являється пояснення відмови сервісу.\n📖 Переклади (UK/EN) для типових помилок маршрутизації та геокодування.\n❓ Довідка в панелі маршрутів — кнопка «?» біля заголовка з підказкою про обмеження геокодування та маршрутизації; текст змінюється залежно від вкладки (точки на карті чи список н.п.).\n💾 Експорт маршруту за н.п. — після побудови можна зберегти файл GeoJSON, KML або GPX без додавання на шар.\n🎨 Заголовок панелі маршрутів — акуратніше розташування назви, кнопки довідки та закриття.\n📜 Прокрутка до результату — після побудови маршруту за н.п. панель плавно прокручується до блоку з результатом.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.29.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-08._"
+ },
+ {
+  "tag": "v1.30.0",
+  "name": "v1.30.0 - Кластеризація точок (DBSCAN)",
+  "body": "🗺️ Quick Map — 1.30.0\n\nКоли на карті багато точок одного типу або з різних шарів, важко швидко побачити, де вони збиваються в групи. Додав інструмент просторової кластеризації: береш видимі точки, задаєш радіус і мінімум точок — апка знаходить скупчення за DBSCAN і показує їх на карті.\n\n🗺️ Новий інструмент «Кластеризація» — збирає видимі точки з обраного шару (або з усіх), групує за відстанню (DBSCAN) і малює прев’ю: оболонки кластерів і кольорові точки.\n📐 Параметри — радіус кластера (м), мінімальна кількість точок, групування за назвою / підписом / типом / шаром або без групування; підписи точок на карті (ім’я, порядок тощо).\n🎨 Легенда груп — увімкнути/вимкнути або прибрати окремі групи, щоб перерахувати кластери без зайвого шуму.\n💾 «Додати в шар» — зберегти області кластерів (і за бажанням їхні точки) у новий або існуючий шар.\n📦 Експорт KML/KMZ — окремо по кластеру або всі разом: лише область, область + центроїд, область + усі точки.\n🎛️ Оновлені контроли UI — кастомний select (ds-select) і слайдери ds-range у панелі кластеризації; переклади UK/EN.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.30.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-13._"
+ },
+ {
+  "tag": "v1.30.6",
+  "name": "v1.30.6 - ",
+  "body": "🗺️ Quick Map — 1.30.6\n\nУ CSV-таблиці дати й час зберігаються в UTC (`2026-07-17T00:00:00` без `Z`), а браузер інтерпретував такі рядки як локальний час — через це при редагуванні зсувались години й хвилини. Цей патч вирівнює парсинг і редактор під UTC, як у вивантаженні.\n\n🔧 Редактор дати/часу в CSV — значення з таблиці читаються як UTC; поля дати й часу показують ті самі моменти, що й у збереженому рядку.\n🔧 Формати часу — підтримка `HH:MM` і `HH:MM:SS` у `<input type=\"time\">`; порожній час → `00:00:00`.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.30.6.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-17._"
+ },
+ {
+  "tag": "v1.31.0",
+  "name": "v1.31.0 - ",
+  "body": "🗺️ Quick Map — 1.31.0\n\nVisicom має якіснішу карту України й дорожню мережу, ніж типові світові джерела — тому додали інтеграцію Data API та Tiles: маршрути, пошук, геокодування й окрему підложку. Ключі задаються в налаштуваннях або через `env.js` (на Vercel — змінні оточення); без ключа всі фолбеки лишаються як були — локальна база населених пунктів, Nominatim, OSRM. У «Вибір об'єктів» замість кількох пресетів — повний каталог категорій Visicom із точним відбором типів POI.\n\n🔑 Visicom у налаштуваннях — окремі поля для ключа Data API (маршрути, пошук, геокодування) і Tiles (підложка); один ключ Data API може підхоплювати обидві ролі.\n🚗 Підложка Visicom — з'являється у перемикачі карт після введення ключа; мова підписів слідує мові інтерфейсу.\n🛣️ Маршрути по Visicom — новий бекенд для побудови дорожніх маршрутів по даних Visicom (режим driving); у виборі бекенду: auto / Visicom / ORS / OSRM.\n🔍 Пошук місць — Visicom геокодування в рядку пошуку карти для точніших результатів по Україні.\n📍 Адреса біля курсора — зворотне геокодування Visicom показує найближчу адресу у спливаючому вікні координат і в інструменті «Найближчі місця».\n💾 CSV з назвою населеного пункту — опційно геокодує рядки лише з назвою (спочатку локальна база, потім Visicom).\n🏙️ Маршрут «Населений пункт → точка» — резолв назв через Visicom першим, Nominatim — фолбек.\n🗺️ «Вибір об'єктів» — вкладки OSM | Visicom; для Visicom підключено повний каталог категорій Data API (базові шари та всі типи POI).\n🏷️ Фільтри Visicom — групи «Базові категорії» й «POI за типом»; чекбокс «Усі POI» або вибір конкретних підтипів; пошук у списку POI для швидкого відбору.\n📐 Геометрія на карті — вулиці, дороги й адмінполігони завантажуються з повною геометрією одразу при перегляді області; об'єкти з GeoJSON відображаються лініями та полігонами, не лише точками.\n🔧 `env.js` — шаблон `env.example.js`; на Vercel `gen-env.mjs` збирає файл із `VISICOM_DATA_API` / `VISICOM_TILES_API`; у offline-збірку кладеться порожня заглушка, щоб ключі не потрапили в архів.\n🎨 Спливаюче вікно координат — обмежена максимальна ширина, щоб панель не виходила за межі вікна на вузьких екранах.\n🎨 Адреса у вікні координат — довгі рядки переносяться коректно завдяки `overflow-wrap`, без горизонтального обрізання.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-21._"
+ },
+ {
+  "tag": "v1.31.1",
+  "name": "v1.31.1 - Bug Fixes",
+  "body": "🗺️ Quick Map — 1.31.1\n\nПісля релізу 1.31.0 посібник користувача ще описував старий інтерфейс (версія 1.30.4) — без Visicom, перейменованого «Вибір об'єктів» і оновлених маршрутів. Цей патч синхронізує UK/EN документацію з фактичним станом застосунку та оновлює скріншоти ключових панелей.\n\n📖 Посібник UK/EN — повний опис інтеграції Visicom: підложка, геокодування в пошуку й контекстному меню, маршрути (Visicom/ORS/OSRM), CSV з назвою н.п., вкладки OSM | Visicom у «Вибір об'єктів».\n📖 Скріншоти — оновлено кадри глобальних налаштувань, вибору об'єктів і побудови маршруту під новий інтерфейс.\n🔧 Версія застосунку — 1.31.1.\n\n\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-21._"
+ },
+ {
+  "tag": "v1.31.3",
+  "name": "v1.31.3 - Точніша ЛБЗ і відстань до кордону 1991",
+  "body": "🗺️ Quick Map — 1.31.3\n\nВідстань до ЛБЗ у 1.31.2 рахувалась по всьому контуру окупованих полігонів DeepState — тому біля узбережжя, держкордону чи Криму цифра могла бути зайвою. Тепер лінія фронту будується окремо: лише спільна межа між окупованою сушою й вільною Україною, з урахуванням кордону 1991 року та північних «кишень» біля Сум і Харкова. Поруч із ЛБЗ у вікні координат з’явилась відстань до державного кордону 1991 — той самий контур, що й на шарі «Кордон України».\n\n📍 Відстань до ЛБЗ — обчислення йде по похідній лінії фронту (free ↔ occupied), а не по всьому периметру окупованих зон; відсікаються морські ділянки, міжнародний кордон і хибні ділянки біля Криму/Сивашу та Запорізького узбережжя.\n📍 Відстань до ДКУ у вікні координат — другий рядок під ЛБЗ: відстань і напрямок до найближчої точки державного кордону України 1991 року, з окремою іконкою; дані кордону підвантажуються асинхронно з тим самим GeoJSON, що й шар «Кордон України».\n🎨 Лінія до кордону — у глобальних налаштуваннях (секція ЛБЗ) окремий чекбокс для пунктирної лінії від курсора до кордону; лінія зникає разом із закриттям вікна координат.\n🗺️ Кордон України 1991 — GeoJSON завантажується асинхронно з кешем; той самий контур використовується для шару «Кордон України», відстані до ДКУ й для побудови «сушевого ядра» при розрахунку ЛБЗ.\n🗺️ Сумська та Харківська області — окреме завантаження ADM1-полігонів; південні краї північних окупованих ділянок додаються до лінії фронту, щоб відстань коректно працювала на північному напрямку.\n🎨 Шар «Deepstate Occupied Only» — показує лише окуповані полігони; ОРДЛО входить у об'єднання, щоб не лишалась «дірка» 2014 року, яку можна сплутати з лінією фронту.\n🔧 Фолбек — якщо похідну лінію фронту не вдалося побудувати, відстань до ЛБЗ лишається на старій схемі (контури окупованих полігонів).\n\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.3.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-25._"
+ },
+ {
+  "tag": "v1.31.4",
+  "name": "v1.31.4 - Стандартизовані фрази",
+  "body": "🗺️ Quick Map — 1.31.4\n\nПерелік стандартизованих фраз у CSV давно перевищив можливості плоского списку: опис об'єктів, зброя, логістика, БПЛА та інші блоки змішувались в одну купу, і в автодоповненні було складно знайти потрібний шаблон. Цей патч синхронізує бібліотеку з узагальненим переліком стандартизованих фраз (версія документа 2.1) і розкладає її по тематичних категоріях. Паралельно виправлено підсвітку збігів у темній темі — жовте маркування тепер однаково видно в SIDC і стандартизованих фразах.\n\n💬 Стандартизовані фрази — `standard-phrases.json` розширено з ~130 до понад 1600 шаблонів; у метаданих документа з'явились версія (2.1) і дата оновлення.\n🏗️ Опис об'єкта — замість одного плоского списку підкатегорії: сільськогосподарське, промислове, житлові, адміністративні, культурні, торговельне, транспорт, навчальні та оздоровчі, фортифікаційні споруди.\n🎖️ Військові та розвідувальні блоки — окремі секції для озброєння та ВТ, характера дій, оцінки вогневого ураження, надавачів розвідданих, критичної інфраструктури, логістики, зосередження, управління та зв'язку, БПЛА, живої сили, стану та положення.\n🏗️ Матеріал і перекриття — окремі підкатегорії для опису конструкції будівлі (цегла, газобетон, залізобетон, шифер, металочерепиця тощо).\n📡 Технічні засоби — шаблони для РЕБ, РЛС і комплексів РЕР з описом і технічними характеристиками.\n🏭 Об'єкти інфраструктури — залізниця, ГТС, транспорт, енергетика, телеком; окремо від класифікації критичної інфраструктури.\n💬 Структури коментарів — нова категорія «Стандартизовані структури коментарів» для типових шаблонів розбиття коментарів.\n🎨 Підсвітка в темній темі — жовте маркування збігів у автодоповненні (SIDC, стандартизовані фрази) тепер однаково видно для всіх `.highlight`, не лише в елементах SIDC-списку.\n🔧 Версія застосунку — 1.31.4.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.4.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-27._"
+ },
+ {
+  "tag": "v1.31.5",
+  "name": "v1.31.5 - Bug Fixes",
+  "body": "🗺️ Quick Map — 1.31.5\n\nІмпорт таблиць з DOCX/XLSX часто губив колонки Delta: «вища формація», коментарі 2–10, час завершення, напрямок тощо або потрапляли не в те поле, або обрізались не так, як у редакторі Delta. Цей патч вирівнює мапінг заголовків і ліміти символів з тим, що очікує Delta при експорті.\n\n📄 Таблиці в документах — розпізнаються колонки SIDC, вища формація, коментар 1…10, коментарі штабу, кількість, тип платформи, надійність/достовірність, час спостереження/завершення, напрямок, швидкість, доп. інформація, номер цілі, IFF/SIF, тип.\n✂️ Ліміти як у Delta — значення з таблиці обрізаються так само, як у редакторі (напр. вища формація — 21 символ, коментарі — 2048, доп. інфо — 20).\n💾 Експорт у Delta — поля з документа потрапляють у відповідні колонки таблиці; явний SIDC із колонки має пріоритет над автовизначенням.\n🔧 Версія застосунку — 1.31.5.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.5.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-28._"
+ },
+ {
+  "tag": "v1.31.7",
+  "name": "v1.31.7 - Delta export split",
+  "body": "🗺️ Quick Map — 1.31.7\n\nПри збереженні великих наборів у Delta імпорт часто падає через ліміти на кількість об'єктів. Тепер у редакторі Delta можна увімкнути розбиття файлу — апка наріже експорт на частини в межах офіційних обмежень імпорту і віддасть ZIP.\n\n💾 Розбиття для Delta — чекбокс «Розбити файл для Delta» з'являється, коли об'єктів більше 2000; при експорті CSV / GeoJSON / KMZ / NVG файл ділиться на частини (CSV — по 2000, решта — по 6500) і завантажується ZIP-архівом.\n⚠️ Попередження про ліміти — якщо розбиття вимкнено, а ліміт перевищено, показується попередження; також є м'які перевірки на розмір 100 МБ, порожні ID в NVG і понад 10000 координат на один об'єкт.\n📎 KMZ з прикріпленнями — при розбитті враховується й ліміт 6500 прикріплень на частину.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.7.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-07-30._"
+ },
+ {
+  "tag": "v1.31.8",
+  "name": "v1.31.8 - Delta FLET distance",
+  "body": "🗺️ Quick Map — 1.31.8\n\nПісля підключення оверлея Delta FLET логічно було показувати відстань до цієї лінії так само, як уже є для DeepState і кордону 1991 — у контекстному меню по правому кліку, з можливістю скопіювати значення і намалювати пунктир до найближчої точки.\n\n📍 Відстань до ЛБЗ (Delta) — у вікні координат з'являється рядок «ЛБЗ (Delta)», коли увімкнено оверлей Delta FLET: відстань і напрямок до найближчої точки лінії фронту з GeoJSON розширення (лінії та контури полігонів); під час завантаження даних рядок чекає на оновлення з розширення.\n🎨 Лінія до ЛБЗ (Delta) — у глобальних налаштуваннях (секція ЛБЗ) чекбокс «Показувати лінію відстані до ЛБЗ (Delta) на карті»; помаранчевий пунктир від курсора до лінії фронту, зникає разом із закриттям вікна координат.\n📋 Копіювання відстаней — рядки ЛБЗ, ЛБЗ (Delta) і кордону 1991 у вікні координат клікабельні (Enter/пробіл теж): копіюють відстань у буфер, зелена галочка підтверджує успіх; стилі для світлої й темної теми.\n📖 Посібник UK/EN — оновлено розділи про правий клік, оверлеї та глобальні налаштування ЛБЗ.\n🔧 Версія застосунку — 1.31.8.\n\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.8.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-08-01._"
+ },
+ {
+  "tag": "v1.31.9",
+  "name": "v1.31.9 - Delta FLET local geofile",
+  "body": "🗺️ Quick Map — 1.31.9\n\nОверлей Delta FLET уже тягнув лінію фронту з розширення, але інколи зручніше підкинути свій GeoJSON/KML/GPX без Chrome-експортера — наприклад офлайн або з іншого джерела. Додав завантаження локального геофайлу прямо з рядка оверлея в панелі шарів і підчистив статус/кнопки.\n\n📤 Локальне завантаження в «Delta FLET» — кнопка upload у кінці рядка оверлея відкриває файл (GeoJSON, KML/KMZ, GPX, CSV та інші підтримувані формати) і малює шар на карті; статус показує ім'я файлу.\n🎨 Статус і кнопки — статус у компактному бейджі зі світлим фоном; при помилці лише «Помилка», повний текст у tooltip; іконка оновлення та відступи кнопок виправлені.\n📖 Посібник UK/EN — оновлено опис оверлея Delta FLET.\n🔧 Версія застосунку — 1.31.9.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.9.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-08-02._"
+ },
+ {
+  "tag": "v1.31.10",
+  "name": "v1.31.10 - POW Form 1.3.5 DOCX import",
+  "body": "🗺️ Quick Map — 1.31.10\n\nФорма опитування полонених № 1.3.5/ГУР — окремий DOCX із десятками полів і MGRS у тексті; вручну переносити точку затримання, маршрут із розділу 6 і коментарі в Delta довго. Тепер при завантаженні такого файлу апка сама розпізнає форму, витягне координати й заповнить поля Delta для редагування та збереження.\n\n📄 Імпорт «Форма № 1.3.5/ГУР» — DOCX з полями 1.1–4.4 (дата опитування, ПІБ, посада, в/ч, захоплення, місце затримання тощо) автоматично визначається як форма POW; якщо це не вона — спрацьовує звичайний імпорт документів.\n📍 Геометрія з форми — точка затримання з п. 4.2, лінія маршруту з розділу «6. Схеми маршрутів» (усі MGRS у рядку), додаткові точки з розділу 7 і наративного тексту; дублікати координат між маршрутом і точками відсікаються.\n🎖️ Поля Delta — SIDC і тип платформи POW, назва з підрозділу, вища формація повністю («номер + тип», напр. `3 мсб/38 омсбр`), коментар штабу (прізвище), час спостереження з дати захоплення, коментар 1/опис із зведених полів форми; ліміти символів як у редакторі.\n📖 Посібник UK/EN — додано опис імпорту Форми № 1.3.5/ГУР.\n🗺️ MGRS у тексті — розпізнавання координат із кириличними «подвійниками» латиниці (А→A тощо) і з роздільниками; конвертація через той самий парсер, що й у текстовому полі.\n🔧 Версія застосунку — 1.31.10.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.10.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-08-04._"
+ },
+ {
+  "tag": "v1.31.11",
+  "name": "v1.31.11 - ",
+  "body": "🗺️ Quick Map — 1.31.11\n\nКоли точки стоять близько, їхні назви накладались одна на одну і заважали читати карту. Додав автоматичне розведення підписів навколо маркера — як «around point» у QGIS: спочатку підпис лишається праворуч, а якщо місце зайняте — шукає вільну позицію довкола.\n\n🏷️ Розведення підписів точок — при накладанні назви зсуваються навколо маркера (праворуч → кути → зверху/знизу → ліворуч); перерахунок при pan/zoom і лише для підписів у видимій області.\n🔧 Налаштування — у глобальних параметрах чекбокс «Розведення підписів точок» (типово увімкнено); вимкніть, щоб усі підписи лишалися фіксовано праворуч.\n📖 Посібник UK/EN — описано поведінку підписів і опцію в налаштуваннях.\n🔧 Версія застосунку — 1.31.11.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.11.zip`\n2. Extract the archive\n3. Open `index.html` in your browser\n4. Internet needed only for map tiles and DeepState FLET\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-08-13._"
+ },
+ {
+  "tag": "v1.31.14",
+  "name": "v1.31.14 - Bug Fixes",
+  "body": "🗺️ Quick Map — 1.31.14\n\nDelta для точок у GeoJSON читає колір з `icon-color`, а для полігонів — з `fill-color`. У таблиці експорту є лише «колір заливки», тож при збереженні GeoJSON точки приходили без кольору.\n\n🎨 GeoJSON для Delta — разом із `fill-color` пишеться той самий колір у `icon-color`, щоб точки й полігони зберігали колір при імпорті в Delta.\n🔧 Версія застосунку — 1.31.14.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.31.14.zip`\n2. Extract the archive\n3. Open `index.html` in your browser (for local-tiles on Windows: run `start-server.bat` and open `http://localhost:8000`)\n4. Internet needed only for map tiles and DeepState FLET\n5. See `OFFLINE_README.md` in the archive for offline setup\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-08-14._"
+ },
+ {
+  "tag": "v1.32.0",
+  "name": "v1.32.0 - NATO / APP-6 amplifiers",
+  "body": "🗺️ Quick Map — 1.32.0\n\nУ Delta вже є поля-ампліфікатори (кількість, назва, вище формування, IFF тощо), але на карті вони жили лише як звичайний підпис збоку. Зробив режим підпису **NATO / APP-6**: ті самі поля малюються на знаку milsymbol, як у звіті Delta / NVG. Заодно прибрав неактуальний оверлей «ISTAR зони» і розклав глобальні налаштування в бічну навігацію, щоб довгі екрани не ховали опції.\n\n🎖️ Підписи NATO / APP-6 — у стилі шару (і як типовий стиль у глобальних налаштуваннях) ампліфікатори з полів Delta сідають на знак APP-6; окремий підпис Leaflet ховається. Працює з NVG, CSV звітів Delta, GeoJSON і ключовими словами в рядку.\n📐 Розкладка як у APP-6 / Delta — кількість зверху, посилення/послаблення (`+`/`-`) справа вгорі, спецпокажчик і час зліва, назва / зауваження штабу / вище формування / IFF по слотах; дата як `ДД/ММ/РР ГГ:ХХ`.\n✂️ Обрізання довгих рядків — у налаштуваннях (Маркери) чекбокс «Обрізати символи якщо більше» з кількістю (типово 30); без галочки показується повний текст.\n🎛️ Глобальні налаштування — секції в бічному меню; однакові рамки інпутів і вирівняні чекбокси, без стрибків рядка.\n📖 Посібник UK/EN — розділ «Підписи NATO / APP-6» зі скріншотом і легендою слотів 1–9.\n🗺️ Прибрано оверлей «ISTAR зони» — більше не в перемикачі шарів.\n🔧 Версія застосунку — 1.32.0.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.32.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser (for local-tiles on Windows: run `start-server.bat` and open `http://localhost:8000`)\n4. Internet needed only for map tiles and DeepState FLET\n5. See `OFFLINE_README.md` in the archive for offline setup\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-08-14._"
+ },
+ {
+  "tag": "v1.32.1",
+  "name": "v1.32.1 - Analytics",
+  "body": "🗺️ Quick Map — 1.32.1\n\nПотрібна була статистика відвідувань окремо по каналах: Vercel-демо з репозиторію, FTP-сайт і офлайн-збірка.\n\n📊 Vercel Web Analytics — на Git-деплої вмикається автоматично.\n📈 Google Analytics — окремі лічильники для FTP-сайту і офлайн-zip; Electron і `file://` трекер не вантажать.\n🔧 Версія застосунку — 1.32.1.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.32.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser (for local-tiles on Windows: run `start-server.bat` and open `http://localhost:8000`)\n4. Internet needed only for map tiles and DeepState FLET\n5. See `OFFLINE_README.md` in the archive for offline setup\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-08-14._"
+ },
+ {
+  "tag": "v1.33.0",
+  "name": "v1.33.0 - OCR for images and scanned documents",
+  "body": "🗺️ Quick Map — 1.33.0\n\nДонесення часто приходять фотографією або сканом: PDF без текстового шару, знімок аркуша з телефона, скан, вставлений у DOCX. Досі такі файли доводилося проганяти через сторонній розпізнавач і копіювати текст руками. Тепер OCR вбудований прямо в імпорт документів і працює офлайн: Tesseract.js (ukr/rus/eng), а розпізнаний текст проходить через той самий DocGrammar, що й DOCX/XLSX/PDF.\n\n📷 OCR для зображень і сканів — PNG/JPG/WebP/BMP/GIF/SVG; для PDF без текстового шару (визначається автоматично) і DOCX із вкладеними сканами зʼявляється кнопка «Розпізнати текст».\n🌐 Мови OCR — українська, російська, англійська: чіпи вибору просто в шарі, вибір запамʼятовується.\n🎛️ Керування в самому шарі — прогрес-бар зі статусом «Сторінка 2 з 7» і скасування. Саме воно не стартує: розпізнавання довге, тож рішення за вами.\n✏️ Правки без повторного OCR — розпізнаний текст показується в редагованому полі: виправляєте неправильно зчитану цифру і тиснете «Знайти координати».\n🔤 Нормалізація OCR-тексту — типові плутанини літер і цифр (О→0, З→3, б→6, І→1), десяткові крапки й маркери Х/У виправляються перед пошуком координат, інакше частина координат просто не знаходиться.\n🖱️ Перетягування розділене за панелями — зображення в список шарів іде на розпізнавання, у блок «Обʼєкти на карті» — лишається анотацією. Заодно .kml/.geojson, кинутий на блок анотацій, більше не зникає безслідно, а імпортується як шар.\n📦 Офлайн-збірка — Tesseract.js, WASM-ядро і мовні моделі (ukr/rus/eng) включені в архів; бібліотека підвантажується лише при першому запуску OCR.\n📖 Посібник UK/EN — новий розділ «Розпізнавання тексту (OCR)» зі скріншотом.\n🔧 Версія застосунку — 1.33.0.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.33.0.zip`\n2. Extract the archive\n3. Open `index.html` in your browser (for local-tiles on Windows: run `start-server.bat` and open `http://localhost:8000`)\n4. Internet needed only for map tiles and DeepState FLET\n5. See `OFFLINE_README.md` in the archive for offline setup\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-08-26._"
+ },
+ {
+  "tag": "v1.33.1",
+  "name": "v1.33.1 - OCR on top of DOCX text",
+  "body": "🗺️ Quick Map — 1.33.1\n\nДонесення часто складене так: сам текст у DOCX, а схема позицій — сканом усередині того ж файлу. Досі апка зчитувала тільки текст і про скани мовчала, бо координати вже знайшлися.\n\n📎 DOCX із текстом і сканами — кнопка «Розпізнати текст» тепер зʼявляється й тоді, коли координати з тексту вже знайдені.\n➕ Розпізнане додається, а не замінює — обʼєкти зі сканів лягають поверх тих, що прийшли з тексту; дублікати відкидаються, і версія з тексту виграє, бо вона точна.\n🔁 Без множення обʼєктів — повторний запуск OCR або «Знайти координати» після ручної правки перераховують лише розпізнану частину, база лишається на місці.\n🎨 Дрібне в UI — статус розрізняє «знайдено» і «додано»; підчищено відступи блоку розпізнавання в шарі.\n🔧 Версія застосунку — 1.33.1.\n\n### 📦 Installation\n\n1. Download `quick-map-offline-1.33.1.zip`\n2. Extract the archive\n3. Open `index.html` in your browser (for local-tiles on Windows: run `start-server.bat` and open `http://localhost:8000`)\n4. Internet needed only for map tiles and DeepState FLET\n5. See `OFFLINE_README.md` in the archive for offline setup\n\n---\n\n_Архівний реліз, перенесено з приватного репозиторію. Оригінальна дата: 2026-08-26._"
+ }
+]

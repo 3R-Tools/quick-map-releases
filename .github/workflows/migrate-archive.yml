@@ -1,0 +1,59 @@
+# One-off: recreate the historical releases of the private source repo here,
+# so the offline archives are publicly downloadable.
+#
+# Runs with the repo's own GITHUB_TOKEN, which is what makes every release
+# show github-actions[bot] as the author instead of a person. The author is
+# fixed when a release is CREATED - attaching assets afterwards never changes
+# it, so the archives are uploaded separately.
+#
+# Every release is created with --latest=false: these are backdated archives
+# and must never displace the real latest release that auto-update follows.
+
+name: 📦 Migrate archive releases
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create archive releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          total=$(jq length migration/releases.json)
+          echo "Releases to create: $total"
+          created=0; skipped=0
+          for i in $(seq 0 $((total - 1))); do
+            tag=$(jq -r ".[$i].tag"  migration/releases.json)
+            name=$(jq -r ".[$i].name" migration/releases.json)
+            jq -r ".[$i].body" migration/releases.json > /tmp/body.md
+
+            if gh release view "$tag" >/dev/null 2>&1; then
+              echo "skip  $tag (already exists)"
+              skipped=$((skipped + 1))
+              continue
+            fi
+            gh release create "$tag" \
+              --title "$name" \
+              --notes-file /tmp/body.md \
+              --latest=false \
+              --target main
+            created=$((created + 1))
+            echo "ok    $tag"
+          done
+          echo "created=$created skipped=$skipped"
+
+      - name: Confirm latest is untouched
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          latest=$(gh release view --json tagName --jq .tagName)
+          echo "Latest release is now: $latest"
