@@ -176,7 +176,8 @@
 
 <script>
 const REPO = '3R-Tools/quick-map-releases';
-const DL = (tag, n) => `https://github.com/${REPO}/releases/download/${encodeURIComponent(tag)}/${encodeURIComponent(n)}`;
+/* Посилання на файли приходять із /api/releases уже підписаними
+   (HMAC + строк дії), тому тут їх не збираємо. */
 
 const ICONS = {
   mac: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.9c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.3 1.1 0 1.6-.7 2.9-.7s1.7.7 2.9.7 2-1.1 2.7-2.2c.9-1.2 1.2-2.5 1.2-2.5s-2.3-.9-2.3-3.6zM14.3 5.3c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.2z"/></svg>',
@@ -312,13 +313,13 @@ function noteHtml(html, spoiler){
   return `<details class="note"><summary>Перший запуск</summary>${body}</details>`;
 }
 
-function fileRow(a, tag){
-  return `<li><a href="${DL(tag, a.name)}" download>
+function fileRow(a){
+  return `<li><a href="${a.dl}" download>
       <span class="fname">${a.meta.label}${a.meta.hint ? ` <em>· ${a.meta.hint}</em>` : ''}</span>
       <span class="fsize">${mb(a.size)}</span></a></li>`;
 }
 
-function renderHero(groups, os, arch, tag){
+function renderHero(groups, os, arch){
   const hero = document.getElementById('hero');
   const relUrl = `https://github.com/${REPO}/releases/latest`;
 
@@ -342,7 +343,7 @@ function renderHero(groups, os, arch, tag){
 
   const items = picks.map((p,i)=>
     `<div class="dl">
-      <a class="btn ${i?'btn--ghost':''}" href="${DL(tag, p.name)}" download>${DLICON}<span>Завантажити</span></a>
+      <a class="btn ${i?'btn--ghost':''}" href="${p.dl}" download>${DLICON}<span>Завантажити</span></a>
       <div class="hero-meta">${ICONS[os]} ${OS_TITLE[os]} · ${p.meta.label}, ${mb(p.size)}</div>
     </div>`).join('');
 
@@ -352,10 +353,10 @@ function renderHero(groups, os, arch, tag){
     ${noteHtml(OS_NOTE[os])}`;
 }
 
-function renderAll(groups, tag){
+function renderAll(groups){
   const order = ['web','mac','win','linux'];
   const cards = order.filter(os => groups[os] && groups[os].length).map(os => {
-    const files = groups[os].slice().sort((a,b)=>a.meta.rank-b.meta.rank).map(a => fileRow(a, tag)).join('');
+    const files = groups[os].slice().sort((a,b)=>a.meta.rank-b.meta.rank).map(a => fileRow(a)).join('');
     const note = noteHtml(OS_NOTE[os], true);
     return `<div class="card">
         <h3>${ICONS[os]} ${OS_TITLE[os]}</h3>
@@ -370,8 +371,7 @@ function renderAll(groups, tag){
 (async function(){
   let rel;
   try{
-    const r = await fetch(`https://api.github.com/repos/${REPO}/releases?per_page=8`,
-                          {headers:{Accept:'application/vnd.github+json'}});
+    const r = await fetch('/api/releases', {headers:{Accept:'application/json'}});
     if (!r.ok) throw new Error('HTTP ' + r.status);
     rel = pickRelease(await r.json());
     if (!rel) throw new Error('no releases');
@@ -387,7 +387,7 @@ function renderAll(groups, tag){
   for (const a of (rel.assets || [])){
     const meta = classify(a.name);
     if (!meta) continue;
-    (groups[meta.os] = groups[meta.os] || []).push({name:a.name, size:a.size, meta});
+    (groups[meta.os] = groups[meta.os] || []).push({name:a.name, size:a.size, dl:a.dl, meta});
   }
 
   const tag = rel.tag_name || '';
@@ -396,8 +396,8 @@ function renderAll(groups, tag){
   const arch = os === 'mac' ? await detectArch() : null;
 
   document.getElementById('ver').textContent = version || '';
-  renderHero(groups, os, arch, tag);
-  renderAll(groups, tag);
+  renderHero(groups, os, arch);
+  renderAll(groups);
   enhanceCodeBlocks();
 })();
 </script>

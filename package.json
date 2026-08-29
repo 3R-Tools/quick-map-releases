@@ -1,0 +1,9 @@
+{
+  "name": "quick-map-releases-site",
+  "private": true,
+  "type": "module",
+  "description": "Сторінка завантажень Quick Map (Vercel): Basic Auth + підписані посилання.",
+  "dependencies": {
+    "@vercel/functions": "^3.9.5"
+  }
+}
